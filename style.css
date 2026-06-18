@@ -1,0 +1,963 @@
+/*
+╔══════════════════════════════════════════════════════════════╗
+║   SWITCHTOBUR N — 90-DAY SWITCH RESET  ·  style.css         ║
+╠══════════════════════════════════════════════════════════════╣
+║                                                              ║
+║   QUICK EDIT GUIDE                                           ║
+║   Use Ctrl+F (Cmd+F on Mac) to jump to any tag below.        ║
+║                                                              ║
+║   COLOURS .................. Search →  EDIT-COLOURS          ║
+║   BUTTONS .................. Search →  EDIT-BUTTONS          ║
+║   NAVIGATION ............... Search →  EDIT-NAV              ║
+║   HERO ..................... Search →  EDIT-HERO             ║
+║   WHATSAPP BUTTON .......... Search →  EDIT-WHATSAPP         ║
+║   MOBILE RESPONSIVE ........ Search →  EDIT-MOBILE           ║
+╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ============================================================
+   EDIT-COLOURS — All brand colours live here.
+   Change any hex value to update the colour across the page.
+   ============================================================ */
+:root {
+  --teal-dark:   #1A5F64;  /* Main brand colour — hero, nav, dark sections */
+  --teal-mid:    #237E84;  /* Mid teal — borders, icons, hover states       */
+  --teal-light:  #E2F1F2;  /* Light teal — strip, backgrounds, borders      */
+  --teal-xl:     #F1FAFA;  /* Very light teal — card backgrounds            */
+  --amber:       #B8722A;  /* Accent — ALL buttons, eyebrows, highlights    */
+  --amber-lt:    #FDF4E7;  /* Light amber — callout box backgrounds         */
+  --charcoal:    #2C2C2A;  /* Main body text                                */
+  --gray-mid:    #6B6B68;  /* Secondary text, captions, FAQ answers         */
+  --gray-light:  #F4F4F2;  /* Light grey — alternating section backgrounds  */
+  --off-white:   #FAFAF8;  /* Off-white — alternating section backgrounds   */
+  --white:       #ffffff;  /* Pure white                                    */
+
+  /* ✏ EDIT: Page max-width — 780px is clean and readable.
+     Increase to 900px or 960px for a wider layout. */
+  --max-w: 780px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.2;
+}
+
+a { text-decoration: none; }
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.sec { padding: 84px 0; }
+
+/* ============================================================
+   EYEBROWS (small uppercase labels above headings)
+   ============================================================ */
+.eyebrow {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+
+.eyebrow-light {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   EDIT-BUTTONS — Button styles: border-radius, font-size, padding
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  transition: filter 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover { filter: brightness(0.88); }
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--white);
+  font-size: 16px;
+  padding: 15px 34px;
+}
+
+.btn-primary-lg {
+  background: var(--amber);
+  color: var(--white);
+  font-size: 17px;
+  padding: 18px 46px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 26px;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   EDIT-NAV — Navigation bar
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--teal-light);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ✏ EDIT: Brand name font, size, and colour */
+.nav-logo {
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: bold;
+  color: var(--teal-dark);
+  text-decoration: none;
+}
+
+/* The "To" part styled in amber — remove <em> tags in HTML to make it uniform */
+.nav-logo em {
+  font-style: normal;
+  color: var(--amber);
+}
+
+/* ============================================================
+   EDIT-HERO — Hero section
+   ============================================================ */
+.hero {
+  background: var(--teal-dark);
+  padding: 88px 0 72px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 44px);
+  color: var(--white);
+  max-width: 620px;
+  margin: 0 auto 18px;
+  line-height: 1.18;
+}
+
+/* ✏ EDIT: The highlighted word in the headline — currently "works" in amber */
+.hero h1 em {
+  font-style: normal;
+  color: var(--amber);
+}
+
+.hero .hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.78);
+  max-width: 520px;
+  margin: 0 auto 34px;
+  line-height: 1.65;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Metabolic Switch Diagram ───────────────────────────────── */
+.switch-diagram {
+  margin: 52px auto 0;
+  max-width: 500px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 12px;
+  padding: 26px 30px 22px;
+  text-align: left;
+}
+
+.diag-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 18px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bar-side {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bar-side-l { color: rgba(255,255,255,0.4); }
+.bar-side-r { color: var(--amber); }
+
+.bar-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12) 0%, var(--amber) 100%);
+  width: 78%;
+}
+
+.bar-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.bar-dot-now  { left: 20%; background: rgba(255,255,255,0.45); }
+
+.bar-dot-goal {
+  left: 85%;
+  background: var(--amber);
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(184,114,42,0.3);
+}
+
+.diag-caption {
+  display: flex;
+  justify-content: space-between;
+}
+
+.diag-caption span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.4;
+  max-width: 42%;
+}
+
+.diag-caption .goal-cap {
+  color: var(--amber);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ============================================================
+   SOCIAL PROOF STRIP
+   ============================================================ */
+.strip {
+  background: var(--teal-light);
+  padding: 16px 28px;
+  text-align: center;
+}
+
+.strip p {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+.strip strong { color: var(--amber); }
+
+/* ============================================================
+   SECTION 2 — PROBLEM RECOGNITION
+   ============================================================ */
+.problem { background: var(--off-white); }
+
+.problem h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--charcoal);
+  margin-bottom: 12px;
+}
+
+.problem .lead-text {
+  font-size: 16px;
+  color: var(--gray-mid);
+  max-width: 580px;
+  margin-bottom: 38px;
+  line-height: 1.65;
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.pain-card {
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--teal-light);
+  border-left: 3px solid var(--teal-mid);
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.55;
+}
+
+.pain-card::before {
+  content: '· ';
+  color: var(--amber);
+  font-weight: 900;
+}
+
+/* ============================================================
+   SECTION 3 — WHY OLD METHODS FAIL
+   ============================================================ */
+.why {
+  background: var(--teal-xl);
+  border-top: 2px solid var(--teal-light);
+  border-bottom: 2px solid var(--teal-light);
+}
+
+.why h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--teal-dark);
+  margin-bottom: 18px;
+}
+
+.why .body-p {
+  font-size: 16px;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 640px;
+}
+
+.bio-box {
+  background: var(--teal-dark);
+  border-radius: 10px;
+  padding: 28px 30px;
+  margin-top: 34px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.bio-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+
+.bio-label {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.bio-box p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ============================================================
+   SECTION 4 — INTRODUCE THE SOLUTION
+   ============================================================ */
+.solution { background: var(--white); }
+
+.solution h2 {
+  font-size: clamp(26px, 4.5vw, 40px);
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.solution .lead-text {
+  font-size: 17px;
+  color: var(--gray-mid);
+  max-width: 600px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.solution .body-p {
+  font-size: 15px;
+  color: var(--charcoal);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.outcome {
+  background: var(--teal-xl);
+  border-radius: 8px;
+  border-top: 3px solid var(--teal-mid);
+  padding: 24px 18px;
+  text-align: center;
+}
+
+.outcome-num {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+
+.outcome-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-bottom: 6px;
+}
+
+.outcome-desc { font-size: 12px; color: var(--gray-mid); line-height: 1.55; }
+
+/* ============================================================
+   SECTION 5 — WHAT'S INSIDE
+   ============================================================ */
+.inside { background: var(--gray-light); }
+
+.inside h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.inside .sub-text {
+  font-size: 15px;
+  color: var(--gray-mid);
+  max-width: 540px;
+  margin-bottom: 38px;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pillar {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 20px 22px;
+  border: 1px solid rgba(35,126,132,0.12);
+}
+
+.pillar-tag {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.pillar h4 {
+  font-size: 15px;
+  color: var(--teal-dark);
+  margin-bottom: 6px;
+}
+
+.pillar p { font-size: 13px; color: var(--gray-mid); line-height: 1.55; }
+
+.pillar-full {
+  grid-column: 1 / -1;
+  background: var(--teal-xl);
+  border-color: var(--teal-mid);
+}
+
+/* ============================================================
+   SECTION 6 — WHO THIS IS FOR
+   ============================================================ */
+.for-sec { background: var(--teal-dark); }
+
+.for-sec h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.for-sec .sub-text {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 32px;
+}
+
+.for-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 36px;
+}
+
+.for-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
+}
+
+.for-list li::before {
+  content: '✓';
+  color: var(--amber);
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.not-for-wrap {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 28px;
+}
+
+.not-label {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 12px;
+}
+
+.not-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.not-list li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.42);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.not-list li::before { content: '×'; flex-shrink: 0; }
+
+/* ============================================================
+   SECTION 7 — SOCIAL PROOF / TESTIMONIALS
+   ============================================================ */
+.proof { background: var(--off-white); }
+
+.proof h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.proof .sub-text {
+  font-size: 15px;
+  color: var(--gray-mid);
+  margin-bottom: 38px;
+  max-width: 520px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.t-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 28px 24px 22px;
+  border: 1px solid var(--teal-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.t-card::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 72px;
+  color: var(--teal-light);
+  line-height: 1;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.t-card-hero {
+  grid-column: 1 / -1;
+  background: var(--teal-xl);
+  border-color: var(--teal-mid);
+  border-width: 2px;
+}
+
+.t-quote {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.65;
+  margin-bottom: 16px;
+  padding-top: 22px;
+}
+
+.t-card-hero .t-quote {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  color: var(--teal-dark);
+}
+
+.t-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--teal-dark);
+}
+
+.t-stage {
+  font-size: 12px;
+  color: var(--gray-mid);
+  margin-top: 2px;
+}
+
+/* ============================================================
+   SECTION 8 — ABOUT
+   ============================================================ */
+.about { background: var(--white); }
+
+.about-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ✏ EDIT: Photo dimensions — currently 148×148px circle */
+.about-photo {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  border: 3px solid var(--teal-mid);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 11px;
+  color: var(--teal-mid);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* When you add your real photo, uncomment this: */
+/* .about-photo img { width: 100%; height: 100%; object-fit: cover; } */
+
+.about h2 {
+  font-size: clamp(22px, 3.5vw, 28px);
+  color: var(--teal-dark);
+  margin-bottom: 14px;
+}
+
+.about p {
+  font-size: 15px;
+  color: var(--charcoal);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.about .sig {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  margin-top: 4px;
+}
+
+/* ============================================================
+   MAILERLITE EMAIL CAPTURE SECTION
+   ============================================================ */
+.email-capture {
+  background: var(--amber-lt);
+  border-top: 2px solid rgba(184,114,42,0.2);
+  border-bottom: 2px solid rgba(184,114,42,0.2);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.email-capture h3 {
+  font-size: clamp(20px, 3.5vw, 26px);
+  color: var(--teal-dark);
+  margin-bottom: 10px;
+}
+
+.email-capture p {
+  font-size: 15px;
+  color: var(--gray-mid);
+  max-width: 460px;
+  margin: 0 auto 28px;
+  line-height: 1.65;
+}
+
+.ml-placeholder {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.ml-placeholder input {
+  flex: 1;
+  min-width: 220px;
+  padding: 13px 18px;
+  border: 1.5px solid rgba(35,126,132,0.25);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: -apple-system, system-ui, sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  outline: none;
+}
+
+.ml-placeholder input:focus {
+  border-color: var(--teal-mid);
+}
+
+/* ============================================================
+   SECTION 9 — FAQ
+   ============================================================ */
+.faq-sec { background: var(--gray-light); }
+
+.faq-sec h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.faq-sec .sub-text {
+  font-size: 15px;
+  color: var(--gray-mid);
+  margin-bottom: 36px;
+}
+
+.faq-list {
+  border-top: 1px solid rgba(35,126,132,0.14);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(35,126,132,0.14);
+}
+
+.faq-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.4;
+  gap: 16px;
+}
+
+.faq-btn:hover { color: var(--teal-dark); }
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--teal-dark);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--teal-mid);
+  color: var(--white);
+}
+
+.faq-ans {
+  display: none;
+  padding: 0 40px 22px 0;
+  font-size: 14px;
+  color: var(--gray-mid);
+  line-height: 1.72;
+  max-width: 620px;
+}
+
+.faq-item.open .faq-ans { display: block; }
+
+/* ============================================================
+   SECTION 10 — FINAL CTA
+   ============================================================ */
+.cta-final {
+  background: var(--teal-dark);
+  padding: 96px 0;
+  text-align: center;
+}
+
+.cta-final h2 {
+  font-size: clamp(26px, 5vw, 40px);
+  color: var(--white);
+  max-width: 540px;
+  margin: 0 auto 16px;
+}
+
+.cta-final .sub-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.68);
+  max-width: 460px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.cta-final .reassurance {
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.38);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: var(--charcoal);
+  padding: 32px 24px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 6px;
+}
+
+footer a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: underline;
+}
+
+footer a:hover { color: rgba(255,255,255,0.7); }
+
+/* ============================================================
+   EDIT-WHATSAPP — WhatsApp floating button
+   To hide: add  display:none;  to .whatsapp-float below.
+   ============================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366; /* WhatsApp green — do not change */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* ============================================================
+   EDIT-MOBILE — Responsive / Mobile styles (max 600px)
+   ============================================================ */
+@media (max-width: 600px) {
+  .sec { padding: 60px 0; }
+  .pain-grid         { grid-template-columns: 1fr; }
+  .pillars           { grid-template-columns: 1fr; }
+  .outcomes          { grid-template-columns: 1fr; }
+  .testimonials      { grid-template-columns: 1fr; }
+  .t-card-hero       { grid-column: 1; }
+  .pillar-full       { grid-column: 1; }
+  .about-inner       { grid-template-columns: 1fr; }
+  .about-photo       { margin: 0 auto; }
+  .ml-placeholder    { flex-direction: column; }
+  .whatsapp-float    { bottom: 20px; right: 20px; }
+}
