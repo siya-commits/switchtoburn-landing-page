@@ -213,6 +213,24 @@ a { text-decoration: none; }
   gap: 10px;
 }
 
+.hero-cta-notes {
+  margin: 20px auto 0;
+  max-width: 480px;
+  text-align: center;
+}
+.hero-cta-notes p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+  margin: 0 0 6px;
+}
+.hero-cta-notes p:last-child {
+  margin-bottom: 0;
+}
+.hero-cta-notes strong {
+  color: rgba(255,255,255,0.88);
+}
+
 /* ── Metabolic Switch Diagram ───────────────────────────────── */
 .switch-diagram {
   margin: 52px auto 0;
