@@ -932,6 +932,7 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   transition: transform 0.15s, box-shadow 0.15s;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .whatsapp-float:hover {
