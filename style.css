@@ -160,19 +160,26 @@ a { text-decoration: none; }
   justify-content: space-between;
 }
 
-/* ✏ EDIT: Brand name font, size, and colour */
+/* Logo link wrapper */
 .nav-logo {
-  font-family: Georgia, serif;
-  font-size: 19px;
-  font-weight: bold;
-  color: var(--teal-dark);
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
-/* The "To" part styled in amber — remove <em> tags in HTML to make it uniform */
-.nav-logo em {
-  font-style: normal;
-  color: var(--amber);
+/* Responsive logo image — 44px tall keeps it tidy inside the 64px nav bar */
+.nav-logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .nav-logo-img {
+    height: 34px;
+  }
 }
 
 /* ============================================================
