@@ -10,7 +10,6 @@
 ║   BUTTONS .................. Search →  EDIT-BUTTONS          ║
 ║   NAVIGATION ............... Search →  EDIT-NAV              ║
 ║   HERO ..................... Search →  EDIT-HERO             ║
-║   WHATSAPP BUTTON .......... Search →  EDIT-WHATSAPP         ║
 ║   MOBILE RESPONSIVE ........ Search →  EDIT-MOBILE           ║
 ╚══════════════════════════════════════════════════════════════╝
 */
@@ -914,39 +913,6 @@ footer a {
 footer a:hover { color: rgba(255,255,255,0.7); }
 
 /* ============================================================
-   EDIT-WHATSAPP — WhatsApp floating button
-   To hide: add  display:none;  to .whatsapp-float below.
-   ============================================================ */
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 200;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366; /* WhatsApp green — do not change */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  transition: transform 0.15s, box-shadow 0.15s;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-
-.whatsapp-float svg {
-  width: 28px;
-  height: 28px;
-  fill: white;
-}
-
-/* ============================================================
    EDIT-MOBILE — Responsive / Mobile styles (max 600px)
    ============================================================ */
 @media (max-width: 600px) {
@@ -960,5 +926,4 @@ footer a:hover { color: rgba(255,255,255,0.7); }
   .about-inner       { grid-template-columns: 1fr; }
   .about-photo       { margin: 0 auto; }
   .ml-placeholder    { flex-direction: column; }
-  .whatsapp-float    { bottom: 20px; right: 20px; }
 }
