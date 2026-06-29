@@ -72,16 +72,16 @@
       margin-bottom: 32px;
     }
 
-    /* YOUTUBE_VIDEO_EMBED: Replace the placeholder div with your iframe */
     .video-wrapper {
       position: relative;
-      max-width: 640px;
+      /* Shorts are portrait 9:16 — cap width so it doesn't tower on desktop */
+      max-width: 340px;
       margin: 0 auto 40px;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
       background: var(--charcoal);
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16;
     }
 
     .video-wrapper iframe {
@@ -91,29 +91,6 @@
       height: 100%;
       border: none;
       display: block;
-    }
-
-    /* Shown only while YOUTUBE_VIDEO_EMBED placeholder is still in use */
-    .video-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: var(--teal-dark);
-      color: rgba(255,255,255,0.5);
-      font-size: 13px;
-      letter-spacing: 0.06em;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .video-placeholder svg {
-      width: 52px;
-      height: 52px;
-      fill: rgba(255,255,255,0.2);
     }
 
     /* ── WhatsApp CTA section ──────────────────────────────────── */
@@ -207,26 +184,13 @@
     <h2>Watch this first</h2>
 
     <div class="video-wrapper">
-      <!--
-        YOUTUBE_VIDEO_EMBED
-        Replace the placeholder div below with your YouTube embed iframe.
-
-        Example:
-        <iframe
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-          title="Welcome to the SwitchToBurn Waitlist"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-
-        To get YOUR_VIDEO_ID: open your YouTube video, copy the URL,
-        and grab the code after ?v= (e.g. dQw4w9WgXcQ).
-      -->
-      <div class="video-placeholder">
-        <!-- Play icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        YOUTUBE_VIDEO_EMBED
-      </div>
+      <!-- YOUTUBE_VIDEO_EMBED -->
+      <iframe
+        src="https://www.youtube.com/embed/8uOAHPibI2k"
+        title="Welcome to the SwitchToBurn Waitlist"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
 
   </div>
@@ -242,12 +206,8 @@
       tips, and everything you need to prepare for the reset.
     </p>
 
-    <!--
-      WHATSAPP_GROUP_LINK
-      Replace the href below with your WhatsApp group invite link.
-      Format: https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXXXXXX
-    -->
-    <a href="WHATSAPP_GROUP_LINK"
+    <!-- WHATSAPP_GROUP_LINK -->
+    <a href="https://chat.whatsapp.com/Js6msJXb1e8KdYfsutZ9gT?mode=gi_t"
        class="btn-whatsapp"
        target="_blank"
        rel="noopener">
